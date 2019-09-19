@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>About</title>
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+        <style>
+            body{
+                background-color: pink;
+            }
+        
+            #about_font{
+                font-family: 'Dovemayo-Medium';
+                font-size: 20px;
+            }
+
+            #using_font{
+                font-family: 'Dovemayo-Medium';
+            }
+            @font-face { 
+                font-family: 'Dovemayo-Medium'; 
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/Dovemayo-Medium.woff') format('woff'); 
+                font-weight: normal; 
+                font-style: normal; 
+            }
+        </style>
+    </head>
+    <body>
+        <div id="big_box">
+                <div class="col-xs-6 col-md-4"></div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                    <img src="https://scontent-lhr3-1.cdninstagram.com/vp/273258ad57a637fa1d179305ab1b973e/5D51B4ED/t51.2885-15/e35/57267814_433228090746593_5353343375653458873_n.jpg?_nc_ht=scontent-lhr3-1.cdninstagram.com&se=7&ig_cache_key=MjAyMTA3NDI4NTgwNDA4MjQ1MQ%3D%3D.2"  alt="지금 사진이 없어요">
+                    <div class="caption">
+                        <p id="about_font">안녕하세요! 멋쟁이 사자처럼 7기 최지우입니다!<br>
+                        이 웹사이트는 단어의 수를 세주는 프로그램입니당~</p> <br>
+                        <p style="font-size:30px; font-family:'Dovemayo-Medium';">사용방법</p>
+                        <p id="using_font">
+                            1. 텍스트 박스 안에 문장을 써줍니다. <br>
+                            2. 문장을 삽입한 뒤 count! 버튼을 눌러 줍니다.<br>
+                            3. 문장의 단어 수와 사용된 단어의 개수가 화면에 나타납니다.</p>
+                        <p><a href="{% url 'home' %}" class="btn btn-primary" role="button">돌아가기</a> </p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-4"></div>
+            </div>
+    </body>
+</html>

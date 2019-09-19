@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Word Count</title>
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        
+        <style>
+            body{
+                background-color: pink;
+            }
+
+            #about_color{
+                color:aliceblue;
+                font-size: 15px;
+                font-family: yg-jalnan;
+            }
+
+            #count_color{
+                font-size: 20px;
+                font-family: yg-jalnan;
+            }
+
+            #head_name{
+                font-family: yg-jalnan;
+            }
+
+            #textarea_font{
+                overflow:scroll;
+                font-family: NanumBarunpen; 
+            }
+            
+            @font-face { 
+                font-family: 'yg-jalnan'; 
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff'); 
+                font-weight: normal; 
+                font-style: normal;     
+            }
+
+            @font-face { 
+                font-family: 'NanumBarunpen';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff') format('woff'); 
+                font-weight: normal; 
+                font-style: normal; 
+            }
+        </style>
+    </head>
+    <body>
+        <br>
+        <div style="margin-left:50px">
+                <div class="row"> 
+                        <div class="col-xs-6 col-md-4" id="head_name"><h1>Word Count</h1></div>
+                </div>
+                <br>
+                <button type="button" class="btn btn-danger"><a href="{% url 'about' %}" id="about_color">ABOUT</a></button> 
+                <br>
+                <br>
+                <br>
+                <form action="{% url 'count' %}">
+                    <textarea cols="70" rows="15" name="fulltext" id="textarea_font"></textarea>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn btn-info" id="count_color" name="first">count!</button>
+                </form>
+        </div>  
+    </body>
+</html>
+

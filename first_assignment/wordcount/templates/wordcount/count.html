@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>About</title>
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+        <style>
+            body{
+                background-color:pink;
+            }
+
+            @font-face { font-family: 'BMJUA'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff'); 
+            font-weight: normal; 
+            font-style: normal; 
+            }
+        </style>
+    </head>
+    <body>
+        <div style="margin-left:50px">
+            <div class="row"> 
+                <div class="col-xs-6 col-md-4" id="head_name"><br></div>
+            </div>
+        <h1 style="font: size 35px; font-family:'BMJUA';">당신이 입력한 텍스트는 <!--총단어수--> {{total}}단어로 구성되어 있습니다.</h1>
+        <h1 style="font-size:30px; font-family:'BMJUA';" >입력한 텍스트: {{fulltext}} </h1>
+        <h1 style="font: size 20px; font-family:'BMJUA';">단어 카운트:</h1>
+        <div id="test">
+                {% for word, countTotal in dictionary %} 
+                <h1 style="font: size 20px; font-family:'BMJUA';">{{word}} = {{countTotal}}</h1> 
+                {% endfor %}
+        </div>
+        
+        <a href="{% url 'home' %} " class="btn btn-danger">다시하기</a>
+        <button type="button" class="btn btn-success" id="sortup">오름차순</button>
+        <button type="button" class="btn btn-success" id="sortdown">내림차순</a>
+        
+        <script>
+                document.getElementById('sortup').addEventListener('click', function() {
+                    if(document.getElementById("sort") != null){
+                        document.getElementById("sort").remove();
+                    }
+                    else if(document.getElementById("down")){
+                        document.getElementById("down").remove();
+                    }
+                    if(document.getElementById("up")){
+                        document.getElementById("up").remove();
+                    }
+                    
+                     var sortup = document.createElement("div");
+                    sortup.id = "down"
+                    sortup.innerHTML = "{% for word, countTotal in sortingup %} {{word}} - {{countTotal}} {% endfor %} ";
+            
+                    document.body.appendChild(sortup);
+            
+                });
+            
+                document.getElementById('sortdown').addEventListener('click', function() {
+                    if(document.getElementById("sort") != null){
+                        document.getElementById("sort").remove();
+                    }
+                    else if(document.getElementById("up")){
+                        document.getElementById("up").remove();
+                    }
+                    if(document.getElementById("down")){
+                        document.getElementById("down").remove();
+                    }
+            
+                    var sortdown = document.createElement("div");
+                    sortdown.id = "down"
+                    sortdown.innerHTML = "{% for word, countTotal in sortingdown %} {{word}} - {{countTotal}} {% endfor %} ";
+            
+                    document.body.appendChild(sortdown);
+            
+                });
+            </script>
+    </body>
+</html>
+
